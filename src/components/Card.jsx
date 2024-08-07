@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-export function Card({ title, description, imageUrl,like }) {
-  const [count,setCount]=useState(like);
+export function Card({ title="Brijesh", description="About", imageUrl="null", like="50" }) {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="w-[300px] rounded-md border">
       <img
@@ -16,9 +17,8 @@ export function Card({ title, description, imageUrl,like }) {
         </p>
         <button
           type="button"
-          onClick={() => {
-            setCount(count + 1)}}
-          className="mt-4 rounded-sm bg-black px-2.5 py-1 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+          onClick={() => setCount(count + 1)}
+          className="mt-4 rounded-sm bg-black px-2.5 py-1 text-[10px] font-semibold text-white shadow-sm hover:bg-black/80"
         >
           Likes {count}
         </button>
